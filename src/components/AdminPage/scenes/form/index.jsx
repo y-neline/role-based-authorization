@@ -66,11 +66,12 @@ const Form = () => {
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="First Name"
+                    placeholder="First Name"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.firstName}
                     name="firstName"
+                    id="firstName" // Add an id attribute
                     error={!!touched.firstName && !!errors.firstName}
                     helperText={touched.firstName && errors.firstName}
                     sx={{gridColumn: "span 2"}}
@@ -79,11 +80,12 @@ const Form = () => {
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="Last Name"
+                    placeholder="Last Name"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.lastName}
                     name="lastName"
+                    id="lastName" // Add an id attribute
                     error={!!touched.lastName && !!errors.lastName}
                     helperText={touched.lastName && errors.lastName}
                     sx={{gridColumn: "span 2"}}
@@ -92,11 +94,12 @@ const Form = () => {
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="Email"
+                    placeholder="Email"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.email}
                     name="email"
+                    id="lastName" // Add an id attribute
                     error={!!touched.email && !!errors.email}
                     helperText={touched.email && errors.email}
                     sx={{gridColumn: "span 4"}}
@@ -105,11 +108,12 @@ const Form = () => {
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="Contact Number"
+                    placeholder="Contact Number"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.contact}
                     name="contact"
+                    id="contact" // Add an id attribute
                     error={!!touched.contact && !!errors.contact}
                     helperText={touched.contact && errors.contact}
                     sx={{gridColumn: "span 4"}}
@@ -118,11 +122,12 @@ const Form = () => {
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="Address 1"
+                    placeholder="Address 1"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.address1}
                     name="address1"
+                    id="address1" // Add an id attribute
                     error={!!touched.address1 && !!errors.address1}
                     helperText={touched.address1 && errors.address1}
                     sx={{gridColumn: "span 4"}}
@@ -131,11 +136,12 @@ const Form = () => {
                     fullWidth
                     variant="filled"
                     type="text"
-                    label="Address 2"
+                    placeholder="Address 2"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.address2}
                     name="address2"
+                    //id="address2" // Add an id attribute
                     error={!!touched.address2 && !!errors.address2}
                     helperText={touched.address2 && errors.address2}
                     sx={{gridColumn: "span 4"}}
