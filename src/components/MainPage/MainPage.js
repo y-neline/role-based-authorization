@@ -14,13 +14,13 @@ const MainPage = () => {
             <ul>
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/register">Register</Link></li>
+                <li><Link to="/">Home</Link></li>
             </ul>
            </div>
            <div>
             <br/>
             <h2>Private</h2>
             <ul>
-                <li><Link to="/">Home</Link></li>
                 <li><Link to="/admin">Admin Page</Link></li>
                 <li><Link to="/driver">Driver Page</Link></li>
                 <li><Link to="/maintenance">Maintenance Page</Link></li>

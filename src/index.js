@@ -4,5 +4,7 @@ import './index.css';
 import App from './App';
 import { AuthProvider } from './context/AuthProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);

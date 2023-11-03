@@ -68,7 +68,7 @@ function App() {
         
         <Route path="home" element={<Home />} ></Route>
         <Route path="fueling" element={<Fueling />} ></Route>
-        <Route path="admin/*" element={<AdminPage />} ></Route>
+        <Route path="admin/*" element={<AdminPage />} />
 
 
 
@@ -97,7 +97,7 @@ function App() {
         {/* catch all */}
        
         
-        <Route path="*" element={<></>} ></Route>
+        {/* <Route path="*" element={<></>} ></Route> */}
       
     </Routes>
     </BrowserRouter>
