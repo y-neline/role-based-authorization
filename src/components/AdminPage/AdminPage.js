@@ -7,11 +7,11 @@ import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team/Team";
 import Contacts from "./scenes/contacts";
 import Invoices from "./scenes/invoices";
-import Form from "./scenes/form";
+import Form from "./scenes/createUser";
 import FAQ from "./scenes/faq";
 import Bar from "./scenes/bar";
 import Pie from "./scenes/pie/Pie";
-import Line from "./scenes/line/Line";
+import Line from "./scenes/line/Line"
 import Geography from "./scenes/geography";
 import Calendar from "./scenes/calendar";
 import "./AdminPage.css";

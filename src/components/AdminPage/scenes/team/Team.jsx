@@ -5,7 +5,11 @@ import { mockDataTeam } from "../../data/mockData";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
+import LocalGasStationOutlinedIcon from '@mui/icons-material/LocalGasStationOutlined';
+import ConstructionOutlinedIcon from '@mui/icons-material/ConstructionOutlined';
+import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
 import Header from "../../components/Header";
+
 
 const Team = () => {
   const theme = useTheme();
@@ -56,8 +60,9 @@ const Team = () => {
                 borderRadius="4px"
             >
                 {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-                {access === "manager" && <SecurityOutlinedIcon />}
-                {access === "user" && <LockOpenOutlinedIcon />}
+                {access === "maintenance" && <ConstructionOutlinedIcon />}
+                {access === "driver" && <DirectionsCarFilledOutlinedIcon />}
+                {access === "fueling" && <LocalGasStationOutlinedIcon />}
                 <Typography color={colors.grey[100]} sx={{ ml: "5px"}}>
                     {access}
                 </Typography>

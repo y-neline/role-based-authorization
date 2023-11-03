@@ -10,4 +10,13 @@ section {
 section li{
     list-style: none;
     margin-left: 0.25rem;
+    font-size: 22pt;
+}
+h1{
+    font-size: 30pt;
+    
+}
+h2{
+    font-size: 25pt;
+    
 }

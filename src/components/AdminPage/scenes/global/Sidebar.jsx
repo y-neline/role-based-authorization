@@ -167,7 +167,7 @@ const Sidebar = () => {
               sx={{ m: "15px 0 5px 20px"}}
             >Pages</Typography>
             <Item 
-              title="Profile Form"
+              title="Create User"
               to="/admin/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
