@@ -9,6 +9,9 @@ import Layout from './components/Layout';
 import Fueling from './components/Fueling';
 import Admin from './components/Admin/Admin';
 import AdminPage from './components/AdminPage/AdminPage';
+import DriverPage from './components/DriverPage/DriverPage'
+import MaintenancePage from './components/MaintenancePage/MaintenancePage'
+import FuelingPage from './components/FuelingPage/FuelingPage';
 import Maintenance from './components/Maintenance';
 import Missing from './components/Missing';
 import Unauthorized from './components/Unauthorized';
@@ -16,6 +19,7 @@ import Driver from './components/Driver';
 import MainPage from './components/MainPage/MainPage';
 import RequireAuth from './components/RequireAuth';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 import MainHome from './components/pages/MainHome';
 import Contact from './components/pages/Contact';
@@ -67,13 +71,13 @@ function App() {
 
         
         <Route path="home" element={<Home />} ></Route>
-        <Route path="fueling" element={<Fueling />} ></Route>
+        <Route path="fueling/*" element={<FuelingPage />} ></Route>
         <Route path="admin/*" element={<AdminPage />} />
 
 
 
-        <Route path="maintenance" element={<Maintenance />} ></Route>
-        <Route path="driver" element={<Driver />} ></Route>
+        <Route path="maintenance/*" element={<MaintenancePage />} ></Route>
+        <Route path="driver/*" element={<DriverPage />} ></Route>
         
 
         {/*the original*/}

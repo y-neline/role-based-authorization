@@ -3,17 +3,22 @@
 html,
 body,
 #root,
-.adminPage,
 .adminContent {
   height: 100%;
   width: 100%;
   font-family: 'Source Sans 3', sans-serif;
+  margin-left: '200px';
+  padding: '20px';
+  flex: '1'
 }
 
 
 
 
 .adminPage {
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Sans 3', sans-serif;
   display: flex;
   position: relative;
 }

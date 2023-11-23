@@ -14,6 +14,8 @@ import Pie from "./scenes/pie/Pie";
 import Line from "./scenes/line/Line"
 import Geography from "./scenes/geography";
 import Calendar from "./scenes/calendar";
+import Task from "./scenes/assigntask/assigntask";
+import Driver from "./scenes/createDriver/driver";
 import "./AdminPage.css";
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
               <Route path="/contacts" element={<Contacts />}></Route>
               <Route path="/invoices" element={<Invoices />}></Route>
               <Route path="/form" element={<Form />}></Route>
+              <Route path="/driver" element={<Driver />}></Route>
+              <Route path="/task" element={<Task />}></Route>
               <Route path="/calendar" element={<Calendar />}></Route>
               <Route path="/faq" element={<FAQ />}></Route>
               <Route path="/bar" element={<Bar />}></Route>

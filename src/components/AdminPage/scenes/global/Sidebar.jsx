@@ -16,6 +16,11 @@ import PieChartOutlinedIcon from "@mui/icons-material/PieChartOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
+import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
+import DriveEtaOutlinedIcon from '@mui/icons-material/DriveEtaOutlined';
+import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
+
 import "./Sidebar.css"
 
 const Item = ({title, to, icon, selected, setSelected}) => {
@@ -129,9 +134,9 @@ const Sidebar = () => {
           {/**Menu Items */}
           <Box paddingLeft={isCollapsed ? undefined : "10px"}>
             <Item 
-              title="Dashboard"
+              title="Reports"
               to="/admin"
-              icon={<HomeOutlinedIcon />}
+              icon={<AssessmentOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -166,10 +171,24 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px"}}
             >Pages</Typography>
-            <Item 
-              title="Profile Form"
+            {/* <Item 
+              title="Create User"
               to="/admin/form"
               icon={<PersonOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            /> */}
+            <Item 
+            title="Create User"
+            to="/admin/driver"
+            icon={<PersonOutlinedIcon />}
+            selected={selected}
+            setSelected={setSelected}
+          />
+            <Item 
+              title="Assign Task"
+              to="/admin/task"
+              icon={<TaskOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

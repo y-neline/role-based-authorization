@@ -2,11 +2,19 @@ import { useRef, useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
+import Topbar from "./AdminPage/scenes/global/Topbar";
+import LoginTopbar from "./LoginTopbar";
+import { ColorModeContext, useMode } from "./AdminPage/theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import axios from "../api/axios";
 const LOGIN_URL = "/auth";
 
 const Login = () => {
+  const [theme, colorMode] = useMode();
+
+
+
   const { setAuth } = useAuth();
 
   const navigate = useNavigate();
@@ -63,8 +71,11 @@ const Login = () => {
   };
 
   return (
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
     <div>
-      <Navbar />
+      <LoginTopbar />
       <section>
         <p
           ref={errRef}
@@ -75,7 +86,7 @@ const Login = () => {
         </p>
         <h1>Sign In</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Email:</label>
           <input
             type="text"
             id="username"
@@ -96,15 +107,22 @@ const Login = () => {
           />
           <button>Sign In</button>
         </form>
-        <p>
+        {/* <p>
           Need an Account?
           <br />
           <span className="line">
             <Link to="/register">Sign Up</Link>
           </span>
-        </p>
+        </p> */}
+        <p>
+          <span className="line">
+            <Link to="/register">Forgot Password?</Link>
+          </span>
+        </p> 
       </section>
     </div>
+    </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 };
 
