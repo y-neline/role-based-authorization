@@ -1,80 +1,162 @@
 import { tokens } from "../theme";
 
-export const mockDataTeam = [
+export let mockDataRoute = [
   {
     id: 1,
-    name: "Jon Snow",
+    driverID: "578933124",
+    routeFrom: "Nazarbayeva University",
+    routeTo: "Astana Arena",
+    routeFromAddress: "123 Main St",
+    routeToAddress: "456 Elm St",
+    status: "completed",
+    date: "2023-11-21",
+    plate: "ABC123IKL111"
+  },
+  {
+    id: 2,
+    driverID: "199125684",
+    routeFrom: "Central Park",
+    routeTo: "Times Square",
+    routeFromAddress: "789 Oak St",
+    routeToAddress: "101 Pine St",
+    status: "canceled",
+    date: "2023-11-18",
+    plate: "DFG586XYZ456"
+  },
+  {
+    id: 3,
+    driverID: "991275589",
+    routeFrom: "Grand Canyon",
+    routeTo: "Statue of Liberty",
+    routeFromAddress: "555 Canyon Rd",
+    routeToAddress: "888 Liberty Ave",
+    status: "delayed",
+    date: "2023-11-04",
+    plate: "SDR567VFH579"
+  }
+];
+export const getMockDataRoute = () => mockDataRoute;
+
+export const updateMockDataRoute = (newData) => {
+  mockDataRoute = newData;
+};
+
+export let mockDataTeam = [
+  {
+    id: 1,
+    govid: "765675789",
+    name: "Jon",
+    surname: "Snow",
+    middle: "Lorem",
     email: "jonsnow@gmail.com",
-    age: 35,
     phone: "(665)121-5454",
+    address: "1514 Main Street, New York",
+    password: "765675789",
     access: "admin",
   },
   {
     id: 2,
-    name: "Cersei Lannister",
+    govid: "556675789",
+    name: "Cersei",
+    surname: "Lannister",
+    middle: "Lorem",
     email: "cerseilannister@gmail.com",
-    age: 42,
     phone: "(421)314-2288",
+    address: "1514 Main Street, New York",
+    password: "556675789",
     access: "admin",
   },
   {
     id: 3,
-    name: "Jaime Lannister",
+    govid: "576675789",
+    name: "Jaime",
+    surname: "Lannister",
+    middle: "Lorem",
     email: "jaimelannister@gmail.com",
-    age: 45,
     phone: "(422)982-6739",
+    address: "1514 Main Street, New York",
+    password: "576675789",
     access: "fueling",
   },
   {
     id: 4,
-    name: "Anya Stark",
+    govid: "856675789",
+    name: "Anya",
+    surname: "Stark",
+    middle: "Lorem",
     email: "anyastark@gmail.com",
-    age: 16,
     phone: "(921)425-6742",
+    address: "1514 Main Street, New York",
+    password: "856675789",
     access: "maintenance",
   },
   {
     id: 5,
-    name: "Daenerys Targaryen",
+    govid: "789612345",
+    name: "Daenerys",
+    surname: "Targaryen",
+    middle: "Lorem",
     email: "daenerystargaryen@gmail.com",
-    age: 31,
     phone: "(421)445-1189",
+    address: "1514 Main Street, New York",
+    password: "789612345",
     access: "fueling",
   },
   {
     id: 6,
-    name: "Ever Melisandre",
+    govid: "202078845",
+    name: "Ever",
+    surname: "Melisandre",
+    middle: "Lorem",
     email: "evermelisandre@gmail.com",
-    age: 150,
     phone: "(232)545-6483",
+    address: "1514 Main Street, New York",
+    password: "202078845",
     access: "maintenance",
   },
   {
     id: 7,
-    name: "Ferrara Clifford",
+    govid: "578933124",
+    name: "Ferrara",
+    surname: "Clifford",
+    middle: "Lorem",
     email: "ferraraclifford@gmail.com",
-    age: 44,
     phone: "(543)124-0123",
+    address: "1514 Main Street, New York",
+    password: "578933124",
     access: "driver",
   },
   {
     id: 8,
-    name: "Rossini Frances",
+    govid: "199125684",
+    name: "Rossini",
+    surname: "Frances",
+    middle: "Lorem",
     email: "rossinifrances@gmail.com",
-    age: 36,
     phone: "(222)444-5555",
+    address: "1514 Main Street, New York",
+    password: "199125684",
     access: "driver",
   },
   {
     id: 9,
-    name: "Harvey Roxie",
+    govid: "991275589",
+    name: "Harvey",
+    surname: "Roxie",
+    middle: "Lorem",
     email: "harveyroxie@gmail.com",
-    age: 65,
     phone: "(444)555-6239",
+    address: "1514 Main Street, New York",
+    password: "991275589",
     access: "driver",
   },
 ];
 
+export const getMockDataTeam = () => mockDataTeam;
+
+export const updateMockDataTeam = (newData) => {
+  mockDataTeam = newData;
+};
 export const mockDataContacts = [
   {
     id: 1,

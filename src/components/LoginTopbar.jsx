@@ -14,6 +14,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
+import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 
 const LoginTopbar = () => {
   const theme = useTheme();
@@ -29,6 +30,13 @@ const LoginTopbar = () => {
           <SearchIcon/>
         </IconButton>
       </Box> */}
+      {/*<Box 
+        display="flex" backgroundColor={colors.primary[400]} borderRadius="3px">
+        <InputBase sx={{ml: 2, flex: 1}} placeholder="Search" />
+        <IconButton type="button" sx={{p: 1}}>
+          <SearchIcon/>
+        </IconButton>
+      </Box> */}
 
       <Box display="flex">
       <Link to="/">
@@ -37,7 +45,25 @@ const LoginTopbar = () => {
         </IconButton>
       </Link>
 
-        <IconButton onClick={colorMode.toggleColorMode}>
+      <Link to="/about">
+        <IconButton>
+          <InfoOutlinedIcon />
+        </IconButton>
+      </Link>
+
+      <Link to="/services">
+        <IconButton>
+          <SupportAgentOutlinedIcon />
+        </IconButton>
+      </Link>
+
+      <Link to="/contact">
+        <IconButton>
+          <AlternateEmailOutlinedIcon />
+        </IconButton>
+      </Link>
+
+        {/* <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === 'dark' ? (
             <DarkModeOutlinedIcon />
           ) : (
@@ -47,13 +73,11 @@ const LoginTopbar = () => {
         
         <IconButton>
           <InfoOutlinedIcon />
-        </IconButton>
+        </IconButton> */}
         
         
           
-        <IconButton>
-          <AlternateEmailOutlinedIcon />
-        </IconButton>
+        
 
       </Box>
     </Box>

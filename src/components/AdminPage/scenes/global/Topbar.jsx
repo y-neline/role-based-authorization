@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, IconButton, useTheme} from "@mui/material";
-import { ColorModeContext, tokens } from "../../theme";
+import { ColorModeContext, tokens } from '../../theme';
 //import InputBase from "@mui/material/InputBase";
 import { InputBase } from '@mui/material';
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -12,8 +12,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
+import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 
-const Topbar = () => {
+const LoginTopbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
@@ -35,7 +38,25 @@ const Topbar = () => {
         </IconButton>
       </Link>
 
-        <IconButton onClick={colorMode.toggleColorMode}>
+      <Link to="/about">
+        <IconButton>
+          <InfoOutlinedIcon />
+        </IconButton>
+      </Link>
+
+      <Link to="/services">
+        <IconButton>
+          <SupportAgentOutlinedIcon />
+        </IconButton>
+      </Link>
+
+      <Link to="/contact">
+        <IconButton>
+          <AlternateEmailOutlinedIcon />
+        </IconButton>
+      </Link>
+
+        {/* <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === 'dark' ? (
             <DarkModeOutlinedIcon />
           ) : (
@@ -44,18 +65,16 @@ const Topbar = () => {
         </IconButton>
         
         <IconButton>
-          <NotificationsOutlinedIcon />
-        </IconButton>
+          <InfoOutlinedIcon />
+        </IconButton> */}
         
         
           
-        <IconButton>
-          <PersonOutlinedIcon />
-        </IconButton>
+        
 
       </Box>
     </Box>
   )
 }
 
-export default Topbar
+export default LoginTopbar

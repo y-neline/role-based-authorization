@@ -20,6 +20,7 @@ import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
 import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
 import DriveEtaOutlinedIcon from '@mui/icons-material/DriveEtaOutlined';
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
+import ForkRightOutlinedIcon from '@mui/icons-material/ForkRightOutlined';
 
 import "./Sidebar.css"
 
@@ -84,7 +85,7 @@ const Sidebar = () => {
                 justifyContent="space-between" alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>ADMINS</Typography>
+                
               <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -104,7 +105,7 @@ const Sidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={'../../assets/facebook.png'}
+                  src={'../../assets/download.png'}
                   style={{ cursor: "pointer", borderRadius: "50%",
                   // borderStyle: "solid",
                   // borderColor: "black",
@@ -113,19 +114,20 @@ const Sidebar = () => {
               </Box>
 
               <Box textAlign="center">
-                <Typography 
-                  variant="h2" 
+                {/* <Typography 
+                  variant="h3" 
                   color={colors.grey[100]} 
                   fontWeight="bold" 
                   sx={{m: "10px 0 0 0"}}
                 >
                   Mark Zuckerberg
-                </Typography>
+                </Typography> */}
                 <Typography 
                   variant="h5" 
                   color={colors.greenAccent[500]} 
+                  sx={{m: "10px 0 0 0"}}
                 >
-                  VP Fancy Admin</Typography>
+                  Admin</Typography>
               </Box>
 
             </Box>
@@ -133,18 +135,28 @@ const Sidebar = () => {
 
           {/**Menu Items */}
           <Box paddingLeft={isCollapsed ? undefined : "10px"}>
-            <Item 
-              title="Reports"
-              to="/admin"
-              icon={<AssessmentOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+            
             <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px"}}
             >Data</Typography>
+            <Item 
+              title="Admin Profile"
+              to="/admin"
+              icon={<PersonOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item 
+              title="Reports"
+              to="/admin/report"
+              icon={<AssessmentOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            
+
             <Item 
               title="Manage Team"
               to="/admin/team"
@@ -152,20 +164,20 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item 
-              title="Contacts Information"
-              to="/admin/contacts"
-              icon={<ContactsOutlinedIcon />}
+             <Item 
+              title="Routes Information"
+              to="/admin/route"
+              icon={<ForkRightOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item 
+            {/*<Item 
               title="Invoices Balance"
               to="/admin/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
             <Typography
               variant="h6"
               color={colors.grey[300]}
@@ -180,11 +192,11 @@ const Sidebar = () => {
             /> */}
             <Item 
             title="Create User"
-            to="/admin/driver"
+            to="/admin/createUser"
             icon={<PersonOutlinedIcon />}
             selected={selected}
             setSelected={setSelected}
-          />
+            />
             <Item 
               title="Assign Task"
               to="/admin/task"
@@ -192,7 +204,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item 
+            {/* <Item 
               title="Calendar"
               to="/admin/calendar"
               icon={<CalendarTodayOutlinedIcon />}
@@ -205,8 +217,8 @@ const Sidebar = () => {
               icon={<HelpOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
-            <Typography
+            /> */}
+            {/* <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px"}}
@@ -238,7 +250,7 @@ const Sidebar = () => {
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
           </Box>
         </Menu>
       </ProSidebar>

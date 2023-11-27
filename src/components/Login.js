@@ -6,6 +6,11 @@ import Topbar from "./AdminPage/scenes/global/Topbar";
 import LoginTopbar from "./LoginTopbar";
 import { ColorModeContext, useMode } from "./AdminPage/theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Services from "./pages/Services";
+import { Routes, Route, Switch, BrowserRouter, Outlet } from "react-router-dom";
+import { mockDataTeam } from "./AdminPage/data/mockData";
 
 import axios from "../api/axios";
 const LOGIN_URL = "/auth";
@@ -38,25 +43,54 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     try {
-      const response = await axios.post(
-        LOGIN_URL,
-        JSON.stringify({ user, pwd }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
+      const userCredentials = { user, pwd };
+  
+      // Check if user credentials match mock data
+      const matchingUser = mockDataTeam.find(
+        (user) => user.email === userCredentials.user && user.password === userCredentials.pwd
       );
-      console.log(JSON.stringify(response?.data));
-      //console.log(JSON.stringify(response));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setAuth({ user, pwd, roles, accessToken });
+  
+      if (!matchingUser) {
+        setErrMsg("Invalid Username or Password");
+        errRef.current.focus();
+        return;
+      }
+  
+      // If credentials match, set access level
+      const access = matchingUser.access;
+  
+      // Depending on the access level, navigate to the corresponding page
+      switch (access) {
+        case "admin":
+          // Navigate to the admin page
+          navigate("/admin", { state: { userData: matchingUser } });
+          break;
+        case "fueling":
+          // Navigate to the fueling page
+          navigate("/fueling", { state: { userData: matchingUser } });
+          break;
+        case "maintenance":
+          // Navigate to the maintenance page
+          navigate("/maintenance", { state: { userData: matchingUser } });
+          break;
+        case "driver":
+          // Navigate to the driver page
+          navigate("/driver", { state: { userData: matchingUser } });
+          break;
+        // Add cases for other access levels as needed
+        default:
+          // Navigate to a default page or handle accordingly
+          break;
+      }
+  
+      // Rest of your code remains unchanged
+      setAuth({ user, pwd, roles: [access], accessToken: "yourAccessToken" });
       setUser("");
       setPwd("");
-      navigate(from, { replace: true });
     } catch (err) {
+      // Handle errors as before
       if (!err?.response) {
         setErrMsg("No Server Response");
       } else if (err.response?.status === 400) {
@@ -69,6 +103,7 @@ const Login = () => {
       errRef.current.focus();
     }
   };
+  
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -120,6 +155,7 @@ const Login = () => {
           </span>
         </p> 
       </section>
+      
     </div>
     </ThemeProvider>
     </ColorModeContext.Provider>
